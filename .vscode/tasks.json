@@ -1,0 +1,9 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "Compilar Debug", "type": "shell", "command": "powershell.exe", "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/build.ps1", "-Configuration", "Debug"], "group": { "kind": "build", "isDefault": true }, "problemMatcher": "$msCompile" },
+    { "label": "Compilar Release", "type": "shell", "command": "powershell.exe", "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/build.ps1", "-Configuration", "Release"], "group": "build", "problemMatcher": "$msCompile" },
+    { "label": "Ejecutar Admit One", "type": "shell", "command": "${workspaceFolder}/src/AdmitOne.Desktop/bin/Debug/AdmitOne.Desktop.exe", "dependsOn": "Compilar Debug", "problemMatcher": [] },
+    { "label": "Pruebas locales", "type": "shell", "command": "${workspaceFolder}/tests/AdmitOne.Tests/bin/Debug/AdmitOne.Tests.exe", "dependsOn": "Compilar Debug", "problemMatcher": [] }
+  ]
+}

@@ -1,0 +1,7 @@
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <PropertyGroup><Configuration Condition="'$(Configuration)'==''">Debug</Configuration><Platform Condition="'$(Platform)'==''">AnyCPU</Platform><ProjectGuid>{497E4F89-43E9-4E6A-9101-101010101003}</ProjectGuid><OutputType>Exe</OutputType><RootNamespace>AdmitOne.Installer</RootNamespace><AssemblyName>AdmitOne.Installer</AssemblyName><TargetFrameworkVersion>v4.8</TargetFrameworkVersion><OutputPath>bin\$(Configuration)\</OutputPath></PropertyGroup>
+  <ItemGroup><Reference Include="System"/><Reference Include="System.Core"/><Reference Include="System.Data"/></ItemGroup>
+  <ItemGroup><ProjectReference Include="..\AdmitOne.Core\AdmitOne.Core.csproj"><Project>{497E4F89-43E9-4E6A-9101-101010101001}</Project><Name>AdmitOne.Core</Name></ProjectReference><Compile Include="Program.cs"/><Content Include="..\..\database\*.sql"><Link>database\%(Filename)%(Extension)</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content></ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

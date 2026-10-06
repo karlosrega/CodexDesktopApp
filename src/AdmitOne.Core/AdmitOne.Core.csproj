@@ -1,0 +1,7 @@
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <PropertyGroup><Configuration Condition="'$(Configuration)'==''">Debug</Configuration><Platform Condition="'$(Platform)'==''">AnyCPU</Platform><ProjectGuid>{497E4F89-43E9-4E6A-9101-101010101001}</ProjectGuid><OutputType>Library</OutputType><RootNamespace>AdmitOne</RootNamespace><AssemblyName>AdmitOne.Core</AssemblyName><TargetFrameworkVersion>v4.8</TargetFrameworkVersion><OutputPath>bin\$(Configuration)\</OutputPath></PropertyGroup>
+  <ItemGroup><Reference Include="System"/><Reference Include="System.Core"/><Reference Include="System.Data"/><Reference Include="System.Security"/><Reference Include="System.Xml"/></ItemGroup>
+  <ItemGroup><Compile Include="Models.cs"/><Compile Include="Security.cs"/><Compile Include="Database.cs"/><Compile Include="Services.cs"/></ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
