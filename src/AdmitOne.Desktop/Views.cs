@@ -74,7 +74,17 @@ namespace AdmitOne.Desktop
         public LoginWindow(ApplicationService service)
         {
             vm=new LoginViewModel(service); DataContext=vm;
-            Title="Admit One · Iniciar sesión"; Width=1050; Height=680; MinWidth=820; MinHeight=540; WindowStartupLocation=WindowStartupLocation.CenterScreen; Ui.Fit(this);
+            Title="Admit One · Iniciar sesión"; Width=1050; Height=680; MinWidth=820; MinHeight=540; WindowStartupLocation=WindowStartupLocation.CenterScreen;
+            Image myImage3 = new Image();
+            BitmapImage bi3 = new BitmapImage();
+            bi3.BeginInit();
+            bi3.UriSource = new Uri("pack://application:,,,/AdmitOne.Desktop;component/Assets/logo.png");
+            bi3.EndInit();
+            myImage3.Stretch = Stretch.Fill;
+            myImage3.Source = bi3;
+
+            Icon = myImage3.Source;
+            Ui.Fit(this);
             var root=new Grid { Background=new SolidColorBrush(Color.FromRgb(245,245,247)) }; root.ColumnDefinitions.Add(new ColumnDefinition { Width=new GridLength(0.46,GridUnitType.Star) }); root.ColumnDefinitions.Add(new ColumnDefinition { Width=new GridLength(0.54,GridUnitType.Star) });
             var brand=new Grid { Background=new LinearGradientBrush(Color.FromRgb(125,26,32),Color.FromRgb(184,41,49),45),Margin=new Thickness(0) };
             var brandText=new StackPanel { Margin=new Thickness(48),VerticalAlignment=VerticalAlignment.Center };
@@ -104,7 +114,7 @@ namespace AdmitOne.Desktop
             },()=>!vm.Busy);
             login.IsDefault=true; login.Margin=new Thickness(0,12,0,0); panel.Children.Add(login); panel.Children.Add(Ui.Notice());
             var busy=Ui.Text("Verificando acceso…",12,Ui.Muted); busy.SetBinding(VisibilityProperty,new Binding("Busy") { Converter=new BooleanToVisibilityConverter() }); panel.Children.Add(busy);
-            panel.Children.Add(Ui.Text("Admit One · Cada equipo, el acceso correcto.",12,Ui.Muted));
+            panel.Children.Add(Ui.Text("Admit One · Aplicación de pruebas.",12,Ui.Muted));
             var form=Ui.Scroll(panel); Grid.SetColumn(form,1); root.Children.Add(form); Content=root;
             Loaded+=(s,e)=>username.Focus(); Ui.CloseApplicationIfMain(this);
         }

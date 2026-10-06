@@ -1,8 +1,40 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
-  <PropertyGroup><Configuration Condition="'$(Configuration)'==''">Debug</Configuration><Platform Condition="'$(Platform)'==''">AnyCPU</Platform><ProjectGuid>{497E4F89-43E9-4E6A-9101-101010101002}</ProjectGuid><OutputType>WinExe</OutputType><RootNamespace>AdmitOne.Desktop</RootNamespace><AssemblyName>AdmitOne.Desktop</AssemblyName><TargetFrameworkVersion>v4.8</TargetFrameworkVersion><OutputPath>bin\$(Configuration)\</OutputPath><ApplicationManifest>app.manifest</ApplicationManifest></PropertyGroup>
-  <ItemGroup><Reference Include="System"/><Reference Include="System.Core"/><Reference Include="System.Data"/><Reference Include="System.Xaml"/><Reference Include="WindowsBase"/><Reference Include="PresentationCore"/><Reference Include="PresentationFramework"/></ItemGroup>
-  <ItemGroup><ProjectReference Include="..\AdmitOne.Core\AdmitOne.Core.csproj"><Project>{497E4F89-43E9-4E6A-9101-101010101001}</Project><Name>AdmitOne.Core</Name></ProjectReference></ItemGroup>
-  <ItemGroup><ApplicationDefinition Include="App.xaml"/><Page Include="Theme.xaml"/><Compile Include="App.xaml.cs"><DependentUpon>App.xaml</DependentUpon></Compile><Compile Include="ViewModels.cs"/><Compile Include="Views.cs"/><Resource Include="Assets\logo.png"/></ItemGroup>
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)'==''">Debug</Configuration>
+    <Platform Condition="'$(Platform)'==''">AnyCPU</Platform>
+    <ProjectGuid>{497E4F89-43E9-4E6A-9101-101010101002}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AdmitOne.Desktop</RootNamespace>
+    <AssemblyName>AdmitOne.Desktop</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdmitOne.Core\AdmitOne.Core.csproj">
+      <Project>{497E4F89-43E9-4E6A-9101-101010101001}</Project>
+      <Name>AdmitOne.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+    <Page Include="Theme.xaml" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels.cs" />
+    <Compile Include="Views.cs" />
+    <Resource Include="Assets\logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
