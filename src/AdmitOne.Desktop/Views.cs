@@ -88,7 +88,7 @@ namespace AdmitOne.Desktop
             var root=new Grid { Background=new SolidColorBrush(Color.FromRgb(245,245,247)) }; root.ColumnDefinitions.Add(new ColumnDefinition { Width=new GridLength(0.46,GridUnitType.Star) }); root.ColumnDefinitions.Add(new ColumnDefinition { Width=new GridLength(0.54,GridUnitType.Star) });
             var brand=new Grid { Background=new LinearGradientBrush(Color.FromRgb(125,26,32),Color.FromRgb(184,41,49),45),Margin=new Thickness(0) };
             var brandText=new StackPanel { Margin=new Thickness(48),VerticalAlignment=VerticalAlignment.Center };
-            brandText.Children.Add(Ui.Text("TU OPERACIÓN, CONECTADA",12,new SolidColorBrush(Color.FromRgb(246,204,206)),true));
+            brandText.Children.Add(Ui.Text("MÁS QUE UN PUNTO DE VENTA",12,new SolidColorBrush(Color.FromRgb(246,204,206)),true));
             brandText.Children.Add(Ui.Text("Más control.\nMás posibilidades.",40,Brushes.White,true));
             brandText.Children.Add(Ui.Text("Un espacio para gestionar tu equipo y mantener cada acceso bajo control.",17,new SolidColorBrush(Color.FromRgb(250,223,224))));
             var stripe=new Border { Height=4,Width=48,Background=Brushes.White,HorizontalAlignment=HorizontalAlignment.Left,Margin=new Thickness(0,24,0,24) }; brandText.Children.Add(stripe);
